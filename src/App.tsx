@@ -21,7 +21,7 @@ function App() {
         const otherValue = { ...listOfThree };
         delete otherValue[clickedValue];
 
-        const currentClickedValue = !listOfThree[clickedValue] && !Object.keys(otherValue).includes(clickedValue);
+        const currentClickedValue = !listOfThree[clickedValue];
         const isAllTrue = Object.keys(otherValue)
             .map((mappedKeys) => otherValue[mappedKeys])
             .filter((filtered) => filtered === true)
@@ -29,10 +29,7 @@ function App() {
         const randomOtherValueIndex = Math.floor(Math.random() * Object.keys(otherValue).length);
         const pickRandomOtherValueKeys = Object.keys(otherValue)[randomOtherValueIndex];
 
-        if (
-            currentClickedValue
-            && isAllTrue
-        ) {
+        if (isAllTrue) {
             otherValue[pickRandomOtherValueKeys] = false;
         }
 
