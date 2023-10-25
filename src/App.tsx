@@ -22,8 +22,7 @@ function App() {
         delete otherValue[clickedValue];
 
         const currentClickedValue = !listOfThree[clickedValue];
-        const isAllTrue = Object.keys(otherValue)
-            .map((mappedKeys) => otherValue[mappedKeys])
+        const isAllTrue = Object.values(otherValue)
             .filter((filtered) => filtered === true)
             .length === Object.keys(otherValue).length;
         const randomOtherValueIndex = Math.floor(Math.random() * Object.keys(otherValue).length);
